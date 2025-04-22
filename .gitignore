@@ -1,0 +1,19 @@
+# Node.js
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Environment variables (if you have .env files)
+.env
+
+# System files (e.g., macOS)
+.DS_Store
+
+# Other
+npm-debug.log
+
