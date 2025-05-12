@@ -4,14 +4,14 @@ FROM node:18 as build
 WORKDIR /usr/src/app
 
 # install app dependencies
-COPY package.json ./
-COPY package-lock.json ./
+COPY package.json package-lock.json ./
+
 RUN npm ci
 
 COPY . ./
 
-# Replace 'api.example.com' with your actual API endpoint
-ENV REACT_APP_API_URL='http://cloud.example.com'
+ARG REACT_APP_API_URL
+ENV REACT_APP_API_URL=$REACT_APP_API_URL
 
 RUN npm run build
 
